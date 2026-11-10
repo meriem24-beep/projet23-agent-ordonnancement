@@ -1,0 +1,4 @@
+﻿event_id,event_type,event_date,start_time,end_time,target_id,description
+EVT001,panne_machine,2026-11-11,10:00,12:00,M_PEI_01,Cabine peinture indisponible pendant 120 minutes
+EVT002,commande_urgente,2026-11-12,09:00,,OF_URGENT_01,"Commande fictive de 20 coffrets industriels, priorité haute, échéance 2026-11-13"
+EVT003,absence_operateur,2026-11-13,08:00,16:00,OP05,Absence de l'opératrice qualifiée peinture

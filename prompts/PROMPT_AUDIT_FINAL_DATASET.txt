@@ -1,0 +1,56 @@
+Tu es un ingénieur senior en recherche opérationnelle, ordonnancement industriel et qualité des données. Audite et améliore le dataset joint pour notre Projet 23 : un prototype pédagogique d’agent d’ordonnancement de production pour un atelier fictif de tôlerie (armoires électriques, coffrets industriels, caissons de machines).
+
+FICHIERS FOURNIS
+- Les 7 CSV actuels : orders.csv, machines.csv, operators.csv, operations.csv, setup_times.csv, disruptions.csv, tools.csv.
+- Le générateur Python et le validateur Python.
+- Le README et le dictionnaire de données.
+Le dataset actuel est une BASE V2 : 31 ordres, 8 machines, 10 opérateurs, 145 opérations et 3 perturbations. Ne pars pas du principe qu’il est correct parce que le validateur passe.
+
+OBJECTIF
+Livrer une seule version finale cohérente, crédible, pédagogiquement défendable et exploitable par un solveur. Ne cherche pas à rendre toutes les commandes réalisables à temps : un peu de surcharge et des retards peuvent être intentionnels. En revanche, chaque contrainte et chaque valeur doit être explicable.
+
+RÈGLES IMPÉRATIVES
+1. Inspecte réellement chaque fichier et toutes les lignes. Ne te contente pas du README.
+2. Ne fabrique aucune affirmation de faisabilité sans calcul. Distingue capacité agrégée, faisabilité détaillée et respect des échéances.
+3. Garde le contexte, les familles de produits, les noms de colonnes et les identifiants existants autant que possible. Ne change le schéma que si nécessaire et documente chaque changement.
+4. Corrige les incohérences entre tables, références inconnues, dates, unités, séquences, compatibilités machine/outillage et événements.
+5. Vérifie que chaque opération a au moins une machine compatible et au moins un opérateur qualifié disponible pendant une partie réaliste de l’horizon.
+6. Vérifie les conflits de ressources : une machine ou un opérateur ne peut pas exécuter deux opérations simultanément. Intègre les horaires, pauses si elles sont modélisées, indisponibilités, calendriers et setup times.
+7. Vérifie les routes par famille et la précédence. Les opérations d’un ordre doivent être ordonnées sans ambiguïté.
+8. Vérifie la matrice des setups : couverture complète des transitions utiles, valeurs non négatives, unités en minutes, cohérence avec familles et types de machines.
+9. Vérifie les perturbations : panne machine, absence opérateur et commande urgente. Chaque événement doit viser un identifiant existant et avoir un effet testable. La commande urgente doit exister dans orders.csv et ses opérations dans operations.csv.
+10. Les durées doivent être plausibles pour des lots de 12 à 80 pièces. Documente si elles représentent une durée de lot ou une durée unitaire. Évite toute confusion entre les deux.
+11. Conserve une difficulté intéressante : au moins un goulot d’étranglement, des setups significatifs, des dates limites variées et quelques commandes qui peuvent être en retard. Ne rends pas le cas trivial.
+12. Utilise une graine fixe. Le générateur doit recréer exactement les mêmes CSV à chaque exécution.
+13. Renforce le validateur pour tester les relations, doublons, valeurs, références, calendriers, opérateurs qualifiés et cohérence des événements. Le validateur doit retourner un code de sortie non nul en cas d’erreur.
+14. Si un point ne peut pas être prouvé sans solveur, marque-le explicitement « non vérifié » au lieu de prétendre qu’il est valide.
+
+ANALYSE À EFFECTUER
+A. Profil de chaque table et de chaque colonne.
+B. Charge par type de machine et capacité réellement disponible sur l’horizon, en explicitant les hypothèses et sans additionner plusieurs fois une même capacité.
+C. Charge par opérateur qualifié et risques de conflits.
+D. Analyse des échéances et du backlog.
+E. Effet attendu de chaque perturbation.
+F. Liste priorisée des défauts trouvés et corrections appliquées.
+G. Limites restantes et éléments qui nécessitent un solveur.
+
+LIVRABLES ATTENDUS
+1. Un dossier final contenant les 7 CSV corrigés.
+2. Un générateur Python déterministe.
+3. Un validateur Python renforcé.
+4. Un rapport d’audit `AUDIT_DATASET.md` avec tableaux chiffrés, hypothèses, corrections et limites.
+5. Un dictionnaire de données actualisé.
+6. Un README avec commandes exactes pour régénérer et valider.
+7. Un `CHANGELOG.md` qui décrit les différences par rapport à V2.
+8. Une petite commande ou un test automatisé qui prouve que deux générations avec la même graine produisent les mêmes fichiers.
+
+FORMAT DE TA RÉPONSE
+- Commence par un verdict bref : ACCEPTÉ, ACCEPTÉ SOUS RÉSERVE ou À REFAIRE.
+- Donne ensuite les défauts réellement observés, pas des critiques génériques.
+- Fournis les fichiers complets, pas seulement des extraits ou des conseils.
+- Exécute le générateur et le validateur si ton environnement le permet et affiche les sorties réelles.
+- N’invente jamais de résultats d’exécution. Si tu ne peux pas joindre des fichiers, fournis leur contenu intégral.
+- Ne propose pas de recommencer le dataset à zéro sauf si tu démontres que la base est irrécupérable.
+- Termine par une liste de 5 actions maximum pour passer à la première version du solveur.
+
+Priorité : exactitude, cohérence et traçabilité. Le but est un dataset pédagogique crédible et défendable, pas un dataset artificiellement parfait.

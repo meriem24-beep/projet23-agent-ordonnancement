@@ -1,0 +1,6 @@
+﻿tool_id,tool_name,compatible_machine_type,notes
+T_DEC,outillage découpe,decoupe,Compatible avec les machines de découpe
+T_PLI,jeu de matrices pliage,pliage,Compatible avec les presses plieuses
+T_SOU,poste et consommables soudage,soudage,Réservé aux opérations de soudage
+T_PEI,système peinture,peinture,Réservé à la cabine de peinture
+T_ASS,outillage assemblage,assemblage,Réservé aux postes d'assemblage

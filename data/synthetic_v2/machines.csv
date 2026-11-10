@@ -1,0 +1,9 @@
+﻿machine_id,machine_type,machine_name,available_minutes_per_day,availability_start,availability_end,tool_id
+M_DEC_01,decoupe,Laser fibre 1,480,2026-11-10,2026-11-14,T_DEC
+M_DEC_02,decoupe,Laser fibre 2,420,2026-11-10,2026-11-14,T_DEC
+M_PLI_01,pliage,Presse plieuse 1,450,2026-11-10,2026-11-14,T_PLI
+M_PLI_02,pliage,Presse plieuse 2,360,2026-11-10,2026-11-14,T_PLI
+M_SOU_01,soudage,Poste soudage 1,420,2026-11-10,2026-11-14,T_SOU
+M_PEI_01,peinture,Cabine peinture 1,420,2026-11-10,2026-11-14,T_PEI
+M_ASS_01,assemblage,Poste assemblage 1,480,2026-11-10,2026-11-14,T_ASS
+M_ASS_02,assemblage,Poste assemblage 2,360,2026-11-10,2026-11-14,T_ASS

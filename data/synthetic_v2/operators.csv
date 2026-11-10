@@ -1,0 +1,11 @@
+﻿operator_id,operator_name,skills,availability_start,availability_end,shift_start,shift_end
+OP01,Amina,decoupe;pliage,2026-11-10,2026-11-14,08:00,16:00
+OP02,Youssef,decoupe,2026-11-10,2026-11-14,08:00,16:00
+OP03,Salma,pliage;soudage,2026-11-10,2026-11-14,08:00,16:00
+OP04,Mehdi,soudage,2026-11-10,2026-11-14,08:00,16:00
+OP05,Nour,peinture,2026-11-10,2026-11-14,08:00,16:00
+OP06,Omar,peinture;assemblage,2026-11-10,2026-11-14,08:00,16:00
+OP07,Lina,assemblage,2026-11-10,2026-11-14,08:00,16:00
+OP08,Karim,decoupe;pliage;assemblage,2026-11-10,2026-11-14,08:00,16:00
+OP09,Imane,soudage;assemblage,2026-11-10,2026-11-14,08:00,16:00
+OP10,Rachid,pliage;peinture,2026-11-10,2026-11-14,08:00,12:00

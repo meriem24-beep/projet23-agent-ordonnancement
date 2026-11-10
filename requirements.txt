@@ -1,0 +1,4 @@
+# Core project dependencies
+# Add solver/UI dependencies after the team selects and documents them.
+pandas>=2.2
+pytest>=8.0
